@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://wlw3ylookmrw"]
+
+[ext_resource type="Texture2D" uid="uid://ds5wj8g08qih2" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="1_4flbx"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+resource_name = "PlayerScript"
+script/source = "extends CharacterBody2D
+
+class_name Player 
+@onready var player_collision_shape: CollisionShape2D = $PlayerCollisionShape
+@onready var tile_map: TileMap = $\"../TileMap\"
+@onready var player: CharacterBody2D = $\".\"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+const SPEED = 120.0
+const JUMP_VELOCITY = -300.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_up\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		if player.collision_mask==2:
+			player.collision_mask=1
+		elif player.collision_mask==1:
+			player.collision_mask=2
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		if direction==1:
+			$Sprite2D.flip_h=false
+		else:
+			$Sprite2D.flip_h=true
+		animation_player.play(\"Runing\")
+		velocity.x = direction * SPEED
+	else:
+		animation_player.play(\"Idle\")
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	move_and_slide()
+"
+
+[sub_resource type="Animation" id="Animation_onrkg"]
+resource_name = "Idle"
+length = 1.2
+loop_mode = 1
+step = 0.26
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(9, 9, 13, 19), Rect2(41, 10, 13, 18), Rect2(73, 10, 13, 18), Rect2(105, 10, 13, 18), Rect2(9, 9, 13, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_i3pqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(9, 9, 13, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_4flbx"]
+resource_name = "Runing"
+length = 3.75
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(8, 74, 14, 18), Rect2(41, 74, 13, 18), Rect2(73, 74, 13, 18), Rect2(105, 74, 13, 18), Rect2(136, 74, 14, 18), Rect2(169, 74, 13, 18), Rect2(201, 74, 13, 18), Rect2(233, 74, 13, 18), Rect2(8, 106, 14, 17), Rect2(41, 106, 13, 18), Rect2(73, 106, 13, 18), Rect2(105, 106, 13, 18), Rect2(136, 106, 14, 18), Rect2(169, 106, 13, 18), Rect2(201, 106, 13, 18), Rect2(233, 106, 13, 18)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onrkg"]
+_data = {
+&"Idle": SubResource("Animation_onrkg"),
+&"RESET": SubResource("Animation_i3pqv"),
+&"Runing": SubResource("Animation_4flbx")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
+radius = 4.666667
+height = 18.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1891477998]
+script = SubResource("GDScript_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=496020249]
+zoom = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1053429281]
+position = Vector2(0, -9)
+texture = ExtResource("1_4flbx")
+region_enabled = true
+region_rect = Rect2(9, 9, 13, 19)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1963343013]
+libraries/ = SubResource("AnimationLibrary_onrkg")
+autoplay = &"Idle"
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1239530726]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_4flbx")

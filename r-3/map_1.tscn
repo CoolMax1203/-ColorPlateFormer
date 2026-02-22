@@ -1,0 +1,135 @@
+[gd_scene format=4 uid="uid://d113po2ffddgk"]
+
+[ext_resource type="PackedScene" uid="uid://wlw3ylookmrw" path="res://player.tscn" id="2_lolil"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_thia8"]
+load_path = "res://.godot/imported/world_tileset.png-d354f49e9c1db8e486c6116e12620814.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thia8"]
+resource_name = "GreenTiles"
+texture = SubResource("CompressedTexture2D_thia8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_lolil"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_thia8")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n2bu5"]
+load_path = "res://.godot/imported/world_tileset.png-d354f49e9c1db8e486c6116e12620814.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q0j8"]
+resource_name = "SandTiles"
+texture = SubResource("CompressedTexture2D_n2bu5")
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_n2bu5"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/2 = SubResource("TileSetAtlasSource_1q0j8")
+
+[node name="Map1" type="Node" unique_id=178235685]
+
+[node name="Player" parent="." unique_id=1891477998 instance=ExtResource("2_lolil")]
+position = Vector2(1, -42)
+
+[node name="Layers" type="Node" parent="." unique_id=942926954]
+
+[node name="Layer1" type="TileMapLayer" parent="Layers" unique_id=587168636]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD5/wAAAQAAAAAAAAD6/wAAAQAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAD4/wAAAQAAAAAAAAD3/wAAAQAAAAAAAAD2/wAAAQAAAAAAAAD1/wAAAQAAAAAAAAADAP//AQAAAAAAAAAFAP7/AQAAAAAAAAAHAP3/AQAAAAAAAAAJAP7/AQAAAAAAAAAMAP3/AQAAAAAAAAALAP//AQAAAAAAAAAIAAEAAQAAAAEAAAAJAAEAAQAAAAEAAAAKAAEAAQAAAAEAAAACAP//AQAAAAAAAAAEAP//AQAAAAAAAAAMAP//AQAAAAAAAAAHAAIAAQAAAAEAAAAGAAIAAQAAAAEAAAAFAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAADAAEAAQAAAAEAAAACAAEAAQAAAAEAAAABAAEAAQAAAAEAAAAAAAEAAQAAAAEAAAD//wEAAQAAAAEAAAD+/wEAAQAAAAEAAAD9/wEAAQAAAAEAAAD8/wEAAQAAAAEAAAD7/wEAAQAAAAEAAAD6/wEAAQAAAAEAAAD5/wEAAQAAAAEAAAD4/wEAAQAAAAEAAAD3/wEAAQAAAAEAAAD2/wEAAQAAAAEAAAD1/wEAAQAAAAEAAAADAAIAAQAAAAEAAAAFAAEAAQAAAAEAAAAGAAEAAQAAAAEAAAAHAAEAAQAAAAEAAAAEAAEAAQAAAAEAAAAIAAIAAQAAAAEAAAALAAAAAQAAAAEAAAAMAAAAAQAAAAEAAAANAAAAAQAAAAEAAAALAAEAAQAAAAEAAAAMAAEAAQAAAAEAAAD6////AgACAAAAAAD7////AgACAAAAAAD8////AgACAAAAAAD9////AgACAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_lolil")
+
+[node name="Layer2" type="TileMapLayer" parent="Layers" unique_id=971583018]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD5/wAAAQAAAAAAAAD6/wAAAQAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAD4/wAAAQAAAAAAAAD3/wAAAQAAAAAAAAD2/wAAAQAAAAAAAAD1/wAAAQAAAAAAAAADAP//AQAAAAAAAAAFAP7/AQAAAAAAAAAHAP3/AQAAAAAAAAAJAP7/AQAAAAAAAAAMAP3/AQAAAAAAAAALAP//AQAAAAAAAAAIAAEAAQAAAAEAAAAJAAEAAQAAAAEAAAAKAAEAAQAAAAEAAAACAP//AQAAAAAAAAAEAP//AQAAAAAAAAAMAP//AQAAAAAAAAAHAAIAAQAAAAEAAAAGAAIAAQAAAAEAAAAFAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAADAAEAAQAAAAEAAAACAAEAAQAAAAEAAAABAAEAAQAAAAEAAAAAAAEAAQAAAAEAAAD//wEAAQAAAAEAAAD+/wEAAQAAAAEAAAD9/wEAAQAAAAEAAAD8/wEAAQAAAAEAAAD7/wEAAQAAAAEAAAD6/wEAAQAAAAEAAAD5/wEAAQAAAAEAAAD4/wEAAQAAAAEAAAD3/wEAAQAAAAEAAAD2/wEAAQAAAAEAAAD1/wEAAQAAAAEAAAADAAIAAQAAAAEAAAAFAAEAAQAAAAEAAAAGAAEAAQAAAAEAAAAHAAEAAQAAAAEAAAAEAAEAAQAAAAEAAAAIAAIAAQAAAAEAAAALAAAAAQAAAAEAAAAMAAAAAQAAAAEAAAANAAAAAQAAAAEAAAALAAEAAQAAAAEAAAAMAAEAAQAAAAEAAAD6////AgACAAAAAAD7////AgACAAAAAAD8////AgACAAAAAAD9////AgACAAAAAAD5/wgAAgACAAAAAAD6/wgAAgACAAAAAAD7/wgAAgACAAAAAAD8/wgAAgACAAAAAAD9/wgAAgACAAAAAAD+/wgAAgACAAAAAAD//wkAAgACAAAAAAAAAAkAAgACAAAAAAABAAkAAgACAAAAAAACAAkAAgACAAAAAAADAAkAAgACAAAAAAAEAAkAAgACAAAAAAAFAAkAAgACAAAAAAAGAAkAAgACAAAAAAAHAAkAAgACAAAAAAAIAAkAAgACAAAAAAAJAAkAAgACAAAAAAAKAAkAAgACAAAAAAA=")
+tile_set = SubResource("TileSet_n2bu5")
