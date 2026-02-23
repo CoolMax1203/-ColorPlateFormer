@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://deei3f86uwfwi"]
+
+[sub_resource type="GDScript" id="GDScript_wp5gn"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	get_tree().reload_current_scene()
+"
+
+[node name="Kill_Zone" type="Node" unique_id=1442133514]
+script = SubResource("GDScript_wp5gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1908429330]

@@ -18,13 +18,18 @@ const JUMP_VELOCITY = -300.0
 
 
 func _physics_process(delta: float) -> void:
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+
+
 	# Handle jump.
 	if Input.is_action_just_pressed(\"ui_up\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animation_player.play(\"Jump\")
+		
 		
 	if Input.is_action_just_pressed(\"ui_accept\"):
 		if player.collision_mask==2:
@@ -33,7 +38,6 @@ func _physics_process(delta: float) -> void:
 			player.collision_mask=2
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction:
 		if direction==1:
 			$Sprite2D.flip_h=false
@@ -42,16 +46,17 @@ func _physics_process(delta: float) -> void:
 		animation_player.play(\"Runing\")
 		velocity.x = direction * SPEED
 	else:
-		animation_player.play(\"Idle\")
+		if not Input.is_action_just_pressed(\"ui_up\") and is_on_floor():
+			animation_player.play(\"Idle\")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 "
 
 [sub_resource type="Animation" id="Animation_onrkg"]
 resource_name = "Idle"
-length = 1.2
+length = 1.3
 loop_mode = 1
-step = 0.26
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,10 +64,26 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1, 1.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Rect2(9, 9, 13, 19), Rect2(41, 10, 13, 18), Rect2(73, 10, 13, 18), Rect2(105, 10, 13, 18), Rect2(9, 9, 13, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_hqtel"]
+resource_name = "Jump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(41, 106, 13, 18)]
 }
 
 [sub_resource type="Animation" id="Animation_i3pqv"]
@@ -101,13 +122,18 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_onrkg"]
 _data = {
 &"Idle": SubResource("Animation_onrkg"),
+&"Jump": SubResource("Animation_hqtel"),
 &"RESET": SubResource("Animation_i3pqv"),
 &"Runing": SubResource("Animation_4flbx")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 4.666667
-height = 18.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
+radius = 2.0
+height = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1891477998]
 script = SubResource("GDScript_4flbx")
@@ -126,5 +152,9 @@ libraries/ = SubResource("AnimationLibrary_onrkg")
 autoplay = &"Idle"
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1239530726]
-position = Vector2(0, -9)
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="smallCollisionShape2" type="CollisionShape2D" parent="." unique_id=1420364355]
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_4flbx")
