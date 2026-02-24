@@ -135,6 +135,5 @@ tile_map_data = PackedByteArray("AAD5/wAAAQAAAAAAAAD6/wAAAQAAAAAAAAD7/wAAAQAAAAA
 tile_set = SubResource("TileSet_n2bu5")
 
 [node name="Timer" type="Timer" parent="." unique_id=1959059612]
-wait_time = 420.67999999999995
 
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
